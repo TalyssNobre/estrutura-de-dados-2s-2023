@@ -1,3 +1,5 @@
+/*TALYS ALEXANDRE NOBRE UC22101806*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
@@ -54,12 +56,12 @@ int main(int argc, char *argv[]){
     calcular_intercepcao(media_x, media_y, inclinacao, &intercepcao);
 
     //SAÍDA
-    
+
     printf("FORMULA DA REGRESSAO LINEAR (dados.csv)\n\n");
     printf("\ty = %.1fx + %.0f", inclinacao, intercepcao);
     getch();
 
-    //desalocar vetor de structs (pontos)
+    
     free(ptr_pontos);
     
     return 0;
@@ -69,11 +71,11 @@ void converter_string_para_numero(FILE * fptr, Ponto * ptr_pontos, char * reg_da
     int i = 0, j = 0, k = 0;
     char aux_x[TAM_AUX], aux_y[TAM_AUX];
 
-    //atribuição dos valores x e y para cada ponto
+    
     for(i = 0; i < qtd_regs; i++){
         fgets(reg_dados, MAX_TAM_REG_DADOS, fptr);
 
-        //dividir registro nos valores x e y
+    
         for(j = 0; reg_dados[j] != ','; j++){
             aux_x[j] = reg_dados[j];
         }
@@ -81,11 +83,11 @@ void converter_string_para_numero(FILE * fptr, Ponto * ptr_pontos, char * reg_da
             aux_y[k] = reg_dados[j];
         }
 
-        //conversão e atribuição dos valores x e y
+        
         ptr_pontos[i].x = atoi(aux_x);
         ptr_pontos[i].y = atof(aux_y);
 
-        //remover o lixo das strings auxiliares
+        
         remover_lixo_aux(&aux_x[0], &aux_y[0]);
     }    
 }
