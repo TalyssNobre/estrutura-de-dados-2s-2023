@@ -1,12 +1,19 @@
-typedef struct No{
+typedef struct NO {
     char valor;
-    struct No* proximo_no;
-} No;
+    struct NO *proximo_no;
+} NO;
 
-No* no(char valor, No* proximo_no);
-void lista_inserir_no(No* L, No* no);
-void lista_imprimir(No* L);
-int lista_quantidade_nos(No* L);
-No* lista_copiar(No* L);
-void lista_concatenar(No* L, No* Lc);
-void lista_liberar(No* L);
+NO *criar_no(char valor, NO *proximo_no);
+void lista_inserir_no(NO *lista, NO *no);
+void lista_imprimir(NO *lista);
+int lista_quantidade_no(NO *lista);
+NO *copiar_lista(NO *lista);
+void lista_concatenar(NO* lista, NO* listaC);
+void lista_liberar(NO* lista);
+
+int lista_verificar_existencia(NO* lista, char valor_busca);
+int lista_verificar_ocorrencias(NO* lista, char valor_busca);
+void lista_imprimir_inversa(NO* lista);
+void lista_inserir_no_i(NO* lista, int i);
+void lista_remover_no_i(NO* lista, int i);
+void lista_remover_no(NO* lista, char valor_busca);
